@@ -3,7 +3,7 @@ import outcomeImg from '../../assets/outcome.svg';
 import totalImg from '../../assets/total.svg';
 import { useTransactions } from '../../hooks/useTransactions';
 
-import { Container } from './styles';
+import { Container, ValueText, SimpleParagraph } from './styles';
 
 export const Summary: React.FC = () => {
   const { transactions } = useTransactions();
@@ -26,40 +26,40 @@ export const Summary: React.FC = () => {
 
   return (
     <Container>
-      <div>
+      <div className="drac-bg-green-secondary">
         <header>
-          <p>Entradas</p>
+          <SimpleParagraph color="blackSecondary">Entradas</SimpleParagraph>
           <img src={incomeImg} alt="Entradas" />
         </header>
-        <strong>
+        <ValueText color="blackSecondary">
           {new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-          }).format(summary.deposits)}</strong>
+          }).format(summary.deposits)}</ValueText>
       </div>
 
-      <div>
+      <div className="drac-bg-red-secondary">
         <header>
-          <p>Saídas</p>
+          <SimpleParagraph color="blackSecondary">Saídas</SimpleParagraph>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>
+        <ValueText color="blackSecondary">
           - {new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL'
-        }).format(summary.withdrawals)}</strong>
+        }).format(summary.withdrawals)}</ValueText>
       </div>
 
-      <div className="highlight-background">
+      <div className="drac-bg-cyan-green">
         <header>
-          <p>Total</p>
+          <SimpleParagraph color="blackSecondary">Total</SimpleParagraph>
           <img src={totalImg} alt="Total" />
         </header>
-        <strong>
+        <ValueText color="blackSecondary">
           {new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-          }).format(summary.total)}</strong>
+          }).format(summary.total)}</ValueText>
       </div>
     </Container>
   );

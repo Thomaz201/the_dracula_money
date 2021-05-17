@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Box } from "@dracula/dracula-ui";
 
-export const Container = styled.main`
+export const Container = styled(Box)`
   max-width: 1120px;
-  margin: 0 auto;
-  padding: 2.5rem 1 rem;
+  padding: 2.5rem 1rem;
 `;

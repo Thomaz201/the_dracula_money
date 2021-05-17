@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 export const Dashboard: React.FC = () => {
   return (
-    <Container>
+    <Container my="none" mx="auto">
       <Summary />
       <TransactionsTable />
     </Container>

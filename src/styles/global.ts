@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #21222c;
+    background: var(--black);
     -webkit-font-smoothing: antialiased;
   }
 
@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
   .react-modal-content {
     width: 100%;
     max-width: 576px;
-    background: #21222c;
+    background: var(--black);
     padding: 3rem;
     position: relative;
     border-radius: 0.24rem;

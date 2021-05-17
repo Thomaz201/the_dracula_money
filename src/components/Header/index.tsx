@@ -1,5 +1,5 @@
 import logoImg from '../../assets/logo.svg';
-import { Container, Content } from './styles';
+import { Container, Content, NewTransactionButton } from './styles';
 
 interface HeaderProps {
   onButtonClickFunction: () => void;
@@ -7,12 +7,12 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ onButtonClickFunction }) => {
   return (
-    <Container>
-      <Content>
+    <Container className="drac-bg-black">
+      <Content my="none" mx="auto">
         <img src={logoImg} alt="the money" />
-        <button type="button" onClick={onButtonClickFunction}>
+        <NewTransactionButton as="button" className="drac-bg-purple drac-text-black" onClick={onButtonClickFunction}>
           Nova transação
-        </button>
+        </NewTransactionButton>
       </Content>
     </Container>
   );
