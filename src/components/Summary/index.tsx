@@ -50,7 +50,7 @@ export const Summary: React.FC = () => {
         }).format(summary.withdrawals)}</ValueText>
       </div>
 
-      <div className="drac-bg-cyan-green">
+      <div className="drac-bg-purple-secondary">
         <header>
           <SimpleParagraph color="blackSecondary">Total</SimpleParagraph>
           <img src={totalImg} alt="Total" />

@@ -5,7 +5,7 @@ import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 import { useTransactions } from '../../hooks/useTransactions';
 
-import { Container, TransactionTypeContainer, RadioBox } from './styles';
+import { Container, TransactionTypeContainer, RadioBox, DracInput } from './styles';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -50,15 +50,17 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ isOpen
       </button>
 
       <Container onSubmit={handleCreateNewTransaction}>
-        <h2>Cadastrar transação</h2>
+        <h2 className="drac-text-white">Cadastrar transação</h2>
 
-        <input
+        <DracInput
+          color="purple"
           placeholder="Título"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
 
-        <input
+        <DracInput
+          color="purple"
           type="number"
           placeholder="Valor"
           value={amount}
@@ -67,6 +69,7 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ isOpen
 
         <TransactionTypeContainer>
           <RadioBox
+            className="drac-text-white"
             type="button"
             onClick={() => setType('deposit')}
             isActive={type === 'deposit'}
@@ -77,6 +80,7 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ isOpen
           </RadioBox>
 
           <RadioBox
+            className="drac-text-white"
             type="button"
             onClick={() => setType('withdraw')}
             isActive={type === 'withdraw'}
@@ -87,13 +91,14 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({ isOpen
           </RadioBox>
         </TransactionTypeContainer>
 
-        <input
+        <DracInput
+          color="purple"
           placeholder="Categoria"
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         />
 
-        <button type="submit">Cadastrar</button>
+        <button className="drac-bg-pink-purple" type="submit">Cadastrar</button>
       </Container>
     </Modal>
   );
